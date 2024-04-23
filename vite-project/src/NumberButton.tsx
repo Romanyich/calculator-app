@@ -1,10 +1,9 @@
-// src/NumberButton.tsx
 import React from 'react';
 
 interface NumberButtonProps {
   number: string;
   onClick: (value: string) => void;
-  className?: string; // Add className prop
+  className?: string;
 }
 
 const NumberButton: React.FC<NumberButtonProps> = ({ number, onClick, className }) => {
