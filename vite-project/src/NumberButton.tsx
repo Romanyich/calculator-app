@@ -1,17 +1,22 @@
-import React from 'react';
+import './NumberButton.css'
 
-interface NumberButtonProps {
+type NumberButtonProps = {
   number: string;
   onClick: (value: string) => void;
-  className?: string;
-}
+  theme: string;
+};
 
-const NumberButton: React.FC<NumberButtonProps> = ({ number, onClick, className }) => {
+function NumberButton({ number, onClick, theme }: NumberButtonProps) {
+  const buttonStyle = {
+    color: theme === 'light' ? '#000000' : '#ffffff',
+    backgroundColor: theme === 'light' ? '#ffffff' : '#000000',
+  }
+
   return (
-    <button className={className} onClick={() => onClick(number)}>
+    <button style={buttonStyle} className="white" onClick={() => onClick(number)}>
       {number}
     </button>
   );
-};
+}
 
 export default NumberButton;

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import NumberButton from './NumberButton';
-import './calculator.css';
+import { useState } from 'react'
+import NumberButton from './NumberButton'
+import './calculator.css'
 
 let i: string
 
-const Calculator: React.FC = () => {
-  const [display, setDisplay] = useState<string>('');
+function Calculator() {
+  const [display, setDisplay] = useState<string>('')
 
   const handleClick = (value: string) => {
     if (i !== '=') {
@@ -14,22 +14,22 @@ const Calculator: React.FC = () => {
       setDisplay('' + value)
     }
     i = 'any'
-  };
+  }
 
   const handleReset = () => {
-    setDisplay('');
-  };
+    setDisplay('')
+  }
 
   const handleCalculate = () => {
     i = '='
     try {
-      setDisplay(eval(display).toString());
+      setDisplay(eval(display).toString())
     } catch (error) {
-      setDisplay('Error');
+      setDisplay('Багуля')
     }
-  };
+  }
 
-  const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+  const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
   return (
     <div className="calculator">
@@ -44,8 +44,8 @@ const Calculator: React.FC = () => {
       <NumberButton number="=" onClick={handleCalculate} className="operator"/>
       <NumberButton number="C" onClick={handleReset} className="operator"/>
     </div>
-  );
-};
+  )
+}
 
-export default Calculator;
+export default Calculator
 
