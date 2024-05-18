@@ -6,14 +6,9 @@ type NumberButtonProps = {
   theme: string;
 };
 
-function NumberButton({ number, onClick, theme }: NumberButtonProps) {
-  const buttonStyle = {
-    color: theme === 'light' ? '#000000' : '#ffffff',
-    backgroundColor: theme === 'light' ? '#ffffff' : '#000000',
-  }
-
+function NumberButton({ number, onClick }: NumberButtonProps) {
   return (
-    <button style={buttonStyle} className="white" onClick={() => onClick(number)}>
+    <button className="white" onClick={() => onClick(number)}>
       {number}
     </button>
   );
